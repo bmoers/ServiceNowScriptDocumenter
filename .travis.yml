@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "iojs"
+  - "7"
+
+dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "bmoers-github"
+    token:
+      secure: "174c5a4657d7d0adb9703f3291f5304e061cde7b"
+jdk:
+  - oraclejdk8
+script:
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
